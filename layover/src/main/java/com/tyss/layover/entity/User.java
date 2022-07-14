@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "user")
+@Entity(name = "users")
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -35,9 +35,9 @@ public class User implements Serializable {
 	private String address;
 	private String title;
 	private String name;
-	@Column(unique = true)
+	@Column(name = "email", nullable = false, unique = true)
 	private String email;
-	@Column(unique = true)
+	@Column(name = "phone_number", nullable = false, unique = true)
 	private Long phoneNumber;
 	private String country;
 	@Convert(converter = StringListConverter.class)
