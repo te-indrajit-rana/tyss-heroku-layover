@@ -71,7 +71,7 @@ public class CustomAuthorizationFilter extends OncePerRequestFilter {
 	}
 
 	private void extracted(HttpServletRequest request, HttpServletResponse response, Optional<OtpLog> email) {
-		if (email.isEmpty()) {
+		if (email.get()==null) {
 			try {
 				log.error("Unauthorized Access Token");
 				accessDenied.handle(request, response, new AccessDeniedException("Unauthorized Access Token"));
