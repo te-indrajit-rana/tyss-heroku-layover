@@ -43,9 +43,4 @@ auth.app:
     jwt-refresh-ms: 1296000000  #15*24*60*60*1000
     jwt-not-before-ms: 3000     #3*1000 
 
-amazonProperties:
-   endpointUrl: https://s3.ap-south-1.amazonaws.com
-   accessKey: AKIA2XCFFJGUA2DNSZ7V
-   secretKey: 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
-   bucketName: layover-connect-s3
-   region: ap-south-1    
+    
