@@ -1,0 +1,51 @@
+spring:
+  datasource:
+    username: root
+    password: root 
+    url: jdbc:mysql://localhost:3306/db_layover_connect?createDatabaseIfNotExist=true&autoReconnect=true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate: 
+        dialect: org.hibernate.dialect.MySQL8Dialect  
+  servlet:
+     multipart:
+        enabled: true
+        max-file-size: 200MB
+        max-request-size: 215MB    
+    
+  mail:  
+    host: smtp.gmail.com
+    username: layoverdemo@gmail.com
+    password: wqppqvwnmawinvhr
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          connectiontimeout: 5000
+          starttls:
+            enable: true
+            required: true
+          timeout: 5000
+          writetimeout: 5000
+
+springdoc:
+  swagger-ui:
+    csrf:
+      enabled: true
+      
+auth.app:
+    jwt-secret: qwerty
+    jwt-expiration-ms: 300000 #24*60*60*1000
+    jwt-refresh-ms: 1296000000  #15*24*60*60*1000
+    jwt-not-before-ms: 3000     #3*1000 
+
+amazonProperties:
+   endpointUrl: https://s3.ap-south-1.amazonaws.com
+   accessKey: AKIA2XCFFJGUA2DNSZ7V
+   secretKey: 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
+   bucketName: layover-connect-s3
+   region: ap-south-1    
